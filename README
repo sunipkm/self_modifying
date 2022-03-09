@@ -1,0 +1,14 @@
+This is an example of a binary modification where the value of an
+internal variable is updated every time the binary is executed.
+The program does not work on platforms that enforce stringent
+code signing (e.g. macOS). Code has been tested in WSL running
+Ubuntu 20.04.3 (gcc 9.3.0). 
+
+To build:
+	$ make
+
+To test:
+	$ ./test.out
+
+Every time test.out runs, the internal variable, which starts
+out at 100, is incremented by a random amount between 10 and 100.

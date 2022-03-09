@@ -34,10 +34,10 @@ void updateVal()
             maybe = true;
         if (maybe && v == 0xaaaaaaaa)
         {
-            printf("Offset %d\n", 4 * count);
-            int nval = 2000;
+            // printf("Offset %d\n", 4 * count);
+            int nval = var.val + 10 + (rand() % 90);
             // modify value here
-            fseek(fp, (count + 1) * 4, SEEK_SET);
+            // fseek(fp, (count + 1) * 4, SEEK_SET); // unnecessary
             fwrite(&nval, 4, 1, fp);
             break;
         }
@@ -48,8 +48,8 @@ void updateVal()
 
 int main(int argc, char *argv[])
 {
+    printf("This function updates the value of a static variable stored inside the binary.\n");
     binName = argv[0];
     printf("Value: %d\n", var.val);
-    var.val = 200;
     atexit(updateVal);
 }
