@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdint.h>
 #include <stdbool.h>
 
 typedef struct __attribute__((packed))
